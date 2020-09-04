@@ -1,0 +1,25 @@
+package com.javarush.task.task13.task1319;
+
+import java.io.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        // напишите тут ваш код
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
+            String s = rd.readLine();
+            File file=new File(s);
+            FileWriter writer=new FileWriter(file);
+            BufferedWriter bufWriter=new BufferedWriter(writer);
+            String x;
+            while (!(x=rd.readLine()).equals("exit")) {
+                bufWriter.write(x+"\n");
+            }
+            bufWriter.write("exit");
+            rd.close();
+            bufWriter.close();
+        }catch (Exception c){
+            c.printStackTrace();
+        }
+    }
+}
